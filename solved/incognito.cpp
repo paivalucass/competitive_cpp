@@ -28,17 +28,12 @@ int main(){
             }
         }
 
-        if (attributes.size() == 1){
-            cout << size << "\n";
-        }
-        else{
-            int total = 1;
+        int total = 1;
 
-            for (auto it = attributes.begin(); it != attributes.end(); ++it) {
-                total = total * it->second;
-            }
-            total += size;
-            cout << total << "\n";
+        for (auto it = attributes.begin(); it != attributes.end(); ++it) {
+            total *= (it->second + 1);
         }
+        total -= 1;
+        cout << total << "\n";
     }
 }
