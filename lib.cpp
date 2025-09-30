@@ -51,5 +51,12 @@ int main() {
     priority_queue<int> pq;
     priority_queue<int,vector<int>,greater<int>>pq;
 
+    // MULTISET Multiset is an associative container similar to the set, but it can store multiple elements with same value.
+
+    multiset<int> ms1;
+    
+    multiset<int> ms2 = {5, 3, 3, 1};
+
+    // OUTPUT: 1 3 3 5 
     return 0;
 }
