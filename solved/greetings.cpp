@@ -49,8 +49,20 @@ int main(){
         int n;
 
         cin >> n;
+        vector<pair<int, int>> ab(n);
+        Fenwick tree(n);
 
-        Fenwick tree(2 * n);
+        for (int i = 0; i < n; ++i){
+            cin >> ab[i].first;
+            cin >> ab[i].second;
+        }
+        
+        sort(ab.begin(), ab.end());
+
+        for (int i = 0; i < n; ++i){
+            tree.add(i, ab[i].second);
+            
+        }
 
         
     }
