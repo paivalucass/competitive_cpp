@@ -16,10 +16,10 @@ int main() {
         adj[b].push_back(a);
     }
 
-    vector<int> color(n + 1, 0); // 0 = uncolored, 1 or 2 = teams
+    vector<int> color(n + 1, 0); 
 
     for (int start = 1; start <= n; ++start) {
-        if (color[start] != 0) continue; // already colored in some component
+        if (color[start] != 0) continue; 
 
         // BFS from start
         queue<int> q;
@@ -31,7 +31,7 @@ int main() {
             q.pop();
             for (int v : adj[u]) {
                 if (color[v] == 0) {
-                    color[v] = 3 - color[u]; // opposite color
+                    color[v] = 3 - color[u];
                     q.push(v);
                 } else if (color[v] == color[u]) {
                     cout << "IMPOSSIBLE\n";
@@ -41,7 +41,7 @@ int main() {
         }
     }
 
-    // If here, valid coloring found
+
     for (int i = 1; i <= n; ++i) {
         if (i > 1) cout << ' ';
         cout << color[i];
