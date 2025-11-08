@@ -292,8 +292,8 @@ int main() {
 
     
     vector<vector<int>> adj(n + 1, vector<int>(n + 1, 0));
-    adj[u][v] = 1;
-    adj[v][u] = 1; // undirected
+    // adj[u][v] = 1;
+    // adj[v][u] = 1; // undirected
 
     // DSU
 
