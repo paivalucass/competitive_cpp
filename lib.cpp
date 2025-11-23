@@ -299,6 +299,87 @@ int main() {
 
     // Disjoint Set Union (Union-Find) with Path Compression and Union by Size
     // Complexity: O(α(N)) per operation (effectively constant time)
+
+
+
+    // GRAPHS
+
+
+    // Adjacency Matrix
+
+    // A 2D matrix adj[n][n] where:
+
+    // adj[u][v] = 1 (or weight) if an edge exists between u and v.
+
+    // adj[u][v] = 0 otherwise.
+
+    int n = 5; // number of vertices
+    vector<vector<int>> adj(n, vector<int>(n, 0));
+
+    // Example: add edge 0-1 (undirected)
+    adj[0][1] = adj[1][0] = 1;
+
+    // Check if edge exists
+    if (adj[0][1]) cout << "Edge 0-1 exists\n";
+
+    // Adjacency List
+
+    // For each vertex u, store a list (vector) of its neighbors:
+
+
+    int n = 5;
+    vector<vector<int>> adj(n);
+
+    // Example: add edge 0-1 and 0-2 (undirected)
+    adj[0].push_back(1);
+    adj[1].push_back(0);
+    adj[0].push_back(2);
+    adj[2].push_back(0);
+
+    // Iterate neighbors of 0
+    for (int v : adj[0]){
+        cout << v << " ";
+    }
+
+    // Weighted Adjacency List
+
+    // Instead of just storing neighbor vertex, store a pair (neighbor, weight).
+
+    int n = 5;
+    vector<vector<pair<int,int>>> adj(n);
+
+    // Add edge 0–1 with weight 4
+    //adj[0].push_back({1, 4});
+    //adj[1].push_back({0, 4}); // if undirected
+
+    // Iterate neighbors
+    for (auto [v, w] : adj[0])
+        cout << "Neighbor " << v << " with weight " << w << "\n";
+
+    // Edge List
+
+    // Just store a list of all edges (u, v) or (u, v, w) for weighted.
+
+    vector<tuple<int,int,int>> edges; // (u,v,w)
+    edges.push_back({0,1,4});
+    edges.push_back({1,2,7});
+
+    for (auto [u,v,w] : edges){
+        cout << u << " " << v << " weight " << w << "\n";
+    }
+
+    // Adjacency Set (or Map)
+
+    // Each vertex’s adjacency stored in a set or unordered_set instead of vector.
+
+    int n = 5;
+    vector<unordered_set<int>> adj(n);
+
+    adj[0].insert(1);
+    adj[1].insert(0);
+
+    if (adj[0].count(1)) cout << "Edge 0-1 exists\n";
+
     return 0;
 }
 
